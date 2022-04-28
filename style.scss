@@ -9,8 +9,7 @@
     padding: 40px 28px 30px;
     width: 1060px;
     background: #F2F2F2;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     margin: 90px auto;
     border-radius: 15px;
     border: 2px solid #BDBDBD;
@@ -45,6 +44,7 @@
     &:hover{
         color: black;
         font-weight: 900;
+        cursor: pointer;
     }
     }
 }
@@ -55,8 +55,7 @@
     padding: 29px 26px;
     width: 1003px;
     border: 2px solid #BDBDBD;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     border-radius: 15px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -64,19 +63,18 @@
     .movielist{
         padding: 18px 19px 0;
         border: 1px solid #BDBDBD;
-        -webkit-box-sizing: border-box;
-                box-sizing: border-box;
-        -webkit-filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.3));
-                filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.3));
+        box-sizing: border-box;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
         border-radius: 10px;
+        display: flex;
+        flex-direction: column;
         .poster {
             border: 1px solid #BDBDBD;
-            -webkit-box-sizing: border-box;
-                    box-sizing: border-box;
-            -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-                    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            box-sizing: border-box;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 10px;
             width: 180px;
+            height: 260px;
         }
         strong {
             display: inline-block;
@@ -85,18 +83,141 @@
             font-size: 16px;
             line-height: 23px;
         }
+        .summary-score-wrap{
+            overflow: hidden;
+            .summary{
+                float: left;
+            }
+            .score {
+                float: right;
+                img{
+                    width: 14px;
+                    margin-right: 4px;
+                }
+            }
+        }
+        dl{
+            display: flex;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 19px;
+            margin-bottom: 5px;
+        }
+        dt{
+            margin-right: 5px;
+            color: #828282;
+        }
+
+        .btn-wrap{
+            margin: 13px -20px 0;
+            // margin-top: auto;
+            display: flex;
+
+        }
+        .btn{
+            width:50%;
+            padding: 9px 0 12px;
+            background: #F2F2F2;
+            border: 1px solid #BDBDBD;
+            box-sizing: border-box;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: center;
+            border-bottom: none;
+            text-decoration: none;
+            color: black;
+
+        }
+        .ticketing{
+            border-radius: 0 0 0 10px;
+        }
+        .preview{
+            border-radius: 0 0 10px 0;
+            border-left: none;
+        }
+        .preview::before{
+            content: '';
+            background: url(./img/아이콘_재생.png);
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-size: 16px;
+            vertical-align: -3px;
+            margin-right: 2px;
+        }
+        }
     }
-}
+
 
 
 footer{
     background-color:#F2F2F2;
     text-align: center;
-    .footer-up{
+    padding: 53px 0 38px;
+    .footer-wrap{
         margin: 0 auto;
+        width: 1189px;
+    }
+    .footer-up{
+        border-bottom:1px solid #C4C4C4;
+        padding-bottom: 42px;
+        margin-bottom: 36px;
+        overflow: hidden;
+        p{
+            float: left;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 26px;
+        }
+        .sns{
+            float: right;
+            img{
+                width: 22px;
+                margin-right: 21px;
+            }
+            .facebook img{
+                margin-right: 0px;
+            }
+
+        }
     }
     .footer-down{
-        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        .left{
+            display: flex;
+            font-size: 14px;
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            font-family: 'Noto Sans KR';
+            font-style: normal;
+            color: #4F4F4F;
+            dl{
+                display: flex;
+
+            }
+            dl::after{
+                content: '';
+                background-color: #4F4F4F;
+                display: inline-block;
+                width: 1px;
+                height: 20px;
+                margin: 0 10px;
+                vertical-align: bottom;
+            }
+
+            dl:last-of-type::after{
+                display: none;
+            }
+            dt{
+                font-weight: 700;
+                margin-right: 5px;
+            }
+        }
     }
 
 }
